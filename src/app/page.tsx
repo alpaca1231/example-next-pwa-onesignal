@@ -1,20 +1,6 @@
-'use client'
-
-import { useEffect } from 'react'
 import Image from 'next/image'
-import OneSignal from 'react-onesignal'
 
 export default function Home() {
-  useEffect(() => {
-    const oneSignalInit = async () => {
-      await OneSignal.init({
-        appId: process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID || '',
-      }).then(() => {
-        OneSignal.Slidedown.promptPush()
-      })
-    }
-    oneSignalInit()
-  }, [])
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
